@@ -11,6 +11,7 @@
 
 /* Import Component files */
 @import "components/btn";
+@import "components/navigation";
 
 /* Import Layout files */
 @import "layout/header";
@@ -19,6 +20,9 @@
 @import "layout/artist";
 @import "layout/testamonial";
 @import "layout/gallery";
+@import "layout/services";
+@import "layout/contact";
+@import "layout/footer";
 
 /* Import Page files */
 @import "pages/App";
