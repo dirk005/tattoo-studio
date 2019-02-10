@@ -1,0 +1,139 @@
+.artist{
+    
+    grid-column: center-start /center-end;
+
+    display: grid;   
+    grid-template-columns:repeat(2, 1fr) ;
+    align-items: center;
+    grid-gap:2rem;
+    margin-bottom: -25rem;
+
+    @include respond(meduim){
+            grid-template-columns:1fr ;
+    }
+
+    &__text{
+        grid-column: 1/2;
+        grid-row:1/2;
+    
+        padding:2rem 1rem;
+        align-self:start;
+        justify-self:start;        
+       
+    }
+
+    &__social{        
+        display:flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    &__icon{
+        
+        &--img{
+            height: 2rem;
+        }
+        &:link,
+        &:visited{           
+            display: inline-block;
+            padding: 1rem 0;
+            text-decoration: none;
+            transition: all .2s;    
+
+            &:not(:first-child){
+                padding-left: 2rem;
+            }
+        }
+       
+        &:hover,
+        &:active{
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateY(-.2rem);
+        }
+    }
+
+    &__picture{
+        grid-column: 2/-1;
+        grid-row:1/2;        
+        width: 100%;        
+        padding: 1.5rem;
+        position: relative;
+        transition: all .5s;
+        
+        &--img{      
+            display: block;
+            width: 100%;
+            height: 120%;    
+            box-shadow: 0 2rem 5rem rgba(#000, .3);
+            transition :all .3s;
+            transform: translateY(-15rem);
+            z-index: -1;  
+        }
+
+        &--name{
+            position: absolute;
+            top:0;
+            left:-2rem;
+            padding:1rem 2rem;
+            font-size: 1.8rem;            
+            text-transform: uppercase;
+            color:$color-grey-dark-1;
+            border: 5px solid $color-primary;
+            border-radius: 1rem;
+            background-image:linear-gradient( rgba($color-primary-light,.8), rgba($color-primary-dark,.8));
+        }        
+    }
+
+    
+
+    &__select{
+        display:flex;
+        justify-content:flex-start;
+        align-items: center;  
+          
+
+      
+        &--shape{             
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        
+        &:hover .artist__select--caption{
+            opacity: 1;
+            transform: translate(-50%,-50%);
+        }
+
+        &:hover .artist__select--img{
+            transform: scale(1);
+            filter: blur(.3rem) brightness(70%);
+        }
+
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+             
+        }
+        &--img{
+        height: 15rem;
+        transition: all .5s;           
+           
+        }
+         &--caption{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,30%);
+            color:$color-white;
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            text-align: center;
+            opacity: 0;
+            transition: all .5s;
+            backface-visibility: hidden;
+        }
+
+        
+
+    }
+}

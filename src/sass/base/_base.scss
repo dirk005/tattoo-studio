@@ -1,0 +1,17 @@
+/* RESET BROWSER DEFAULT STYLES */
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;  // 1rem =10px  -10/16 = 62.5%
+    box-sizing: border-box;
+    
+    @include respond(meduim){
+            font-size: 50% // 1rem = 8px smaller from 900px
+    }
+}
