@@ -1,3 +1,28 @@
 .footer{
-    
+     grid-column: full-start / full-end;    
+    background-image: linear-gradient(to right bottom ,
+        rgba($color-primary-light ,1),
+        rgba($color-primary-dark ,1));
+    background-size: cover;
+    box-shadow: 0 -.2rem .5rem rgba($color-black,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    padding:2rem 0;
 }
+
+.copyright{
+   
+   &__link{
+        &:link,
+        &:visited{
+            text-decoration: none;
+            color:$color-grey-dark-2;
+        }
+
+        &:hover{
+            color:$color-primary-dark;
+        }
+    }
+}
+
