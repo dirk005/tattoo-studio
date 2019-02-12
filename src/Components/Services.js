@@ -4,7 +4,9 @@ const Services = () => {
     return(
         <>
         <section id="services" className="services">
-                
+                <div className='heading-box'>
+                    <h2 className='heading-secondary'>Services</h2>
+                </div>
                 <div className="services__cards">
                         <div className="card">
                             <div className="card__side card__side--front">

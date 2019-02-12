@@ -69,7 +69,7 @@ class Gallery extends Component{
         return(
             <>
                 <section id='gallery' class="gallery">
-
+            <div className='gallery__box'>
                 {//Add all imges to page
                     images.map((image,i) =>{
                         return(
@@ -79,7 +79,7 @@ class Gallery extends Component{
                         );
                     })
                 }
-                
+                    </div>
             </section>
             </>
         );

@@ -4,8 +4,11 @@ const Footer = () => {
     return(
         <>
             <footer className='footer'>
-                <p class="copyright">
-                    &copy; Copyright 2019 <a href='https://dirk005.github.io/Portfolio/' rel='noopener noreferrer' target='_blank' className='copyright__link'>Dirk Jansen van Rensburg</a>.
+                <p class="footer-text">
+                    &copy; Copyright 2019 <a href='#' rel='noopener noreferrer' target='_blank' className='footer__link'>Tattoo Studio</a>.
+            </p>
+                <p class="footer-text">
+                    Designed and developed by  <a href='https://dirk005.github.io/Portfolio/' rel='noopener noreferrer' target='_blank' className='footer__link'>Dirk Jansen van Rensburg</a>.
             </p>
             </footer>
         </>

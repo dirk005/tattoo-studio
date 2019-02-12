@@ -3,26 +3,34 @@
     background-image: linear-gradient(to right bottom ,
         rgba($color-primary-light ,1),
         rgba($color-primary-dark ,1));
-    background-size: cover;
+    background-size: cover;    
     box-shadow: 0 -.2rem .5rem rgba($color-black,.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    padding:2rem 0;
-}
+    
+    margin-top: -10rem;
+    @include supportsClipPath{
+        -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 85%, 0 100%);
+        clip-path: polygon(0 80% ,100% 0 ,100% 100%, 0 100%);
+    }
 
-.copyright{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;    
+    padding: 10rem 0 5rem 0;
+
    
-   &__link{
+     &__link{
         &:link,
         &:visited{
             text-decoration: none;
-            color:$color-grey-dark-2;
+            color:$color-primary-dark;
         }
 
         &:hover{
-            color:$color-primary-dark;
+              color:$color-grey-dark-2;
         }
     }
 }
+
 

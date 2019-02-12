@@ -69,6 +69,16 @@ body{
     text-transform: uppercase;
 }
 
+.heading-box{
+    background-image:linear-gradient(to left,rgba($color-black,.8),rgba($color-grey-dark-2,.8));
+    display: inline-block;
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    margin:3rem 0;
+    align-self: center;   /* Add display flex to parent */
+    
+}
+
 .paragraph{
     font-size: $default-font-size;
     &:not(last-child){

@@ -1,12 +1,12 @@
 .artist{
     
     grid-column: center-start /center-end;
-
+    padding-top:15rem;
     display: grid;   
     grid-template-columns:repeat(2, 1fr) ;
     align-items: center;
     grid-gap:2rem;
-     margin-bottom: -25rem;
+     margin-bottom: -26rem;
 
     @include respond(meduim){
             grid-template-columns:1fr ;
@@ -66,7 +66,7 @@
             width: 100%;
             transition :all .3s;
             transform: translateY(-15rem);
-            z-index: -1;  
+            z-index: -100;  
         }
 
         &--name{
@@ -80,6 +80,7 @@
             border: 5px solid $color-primary;
             border-radius: 1rem;
             background-image:linear-gradient( rgba($color-primary-light,.8), rgba($color-primary-dark,.8));
+            z-index: 1;
         }        
     }
 

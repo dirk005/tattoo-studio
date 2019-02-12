@@ -5,15 +5,17 @@
         rgba($color-primary-dark ,0.8)),
         url(./img/testamonial-back.jpg);
     background-size: cover;
-    padding:20rem;
-    
+    padding:15rem;
+    padding-bottom: 25rem;
+    margin-bottom: -22rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
      @include supportsClipPath{
         -webkit-clip-path: polygon(0 22% ,100% 0 ,100% 75%, 0 100%);
-        clip-path: polygon(0 22% ,100% 0 ,100% 75%, 0 100%);
+        clip-path: polygon(0 22% ,100% 0 ,100% 72%, 0 100%);
     }
 
     @include respond(meduim){

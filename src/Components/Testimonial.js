@@ -50,6 +50,9 @@ class Testimonial extends Component{
         return (
             <>
                     <section id='testimonial' className="testimonial">
+                        <div className='heading-box'>
+                            <h2 className='heading-secondary'>Testimonials</h2>
+                        </div>
                         <div className="testimonial__box">
                             <div className="testimonial__description">
                             <p>{testimonials[counter].description}</p>
