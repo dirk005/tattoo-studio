@@ -17,9 +17,30 @@
         clip-path: polygon(0 0 ,100% 22% ,100% 100%, 0 78%);
     }
 
+    @include respond(large){
+       padding: 15rem 5rem 25rem 5rem ;
+    }
+
+    @include respond(meduim){
+        margin-top:10rem;
+        padding:  5rem ;
+    
+        @include supportsClipPath{
+            -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+        }
+    }
+
+
     &__cards{
         display: grid;
         grid-template-columns: repeat(3 , 1fr);
         
+        @include respond(small){
+            grid-template-columns: 1fr;
+            grid-gap: 2.5rem;
+            justify-items: center;
+            align-items: center;
+        }        
     }
 }

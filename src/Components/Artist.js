@@ -74,23 +74,24 @@ class Artist extends Component {
       <>
         <section id="artists" className="artist">
           <div className="artist__text">
-            <h2 className="heading-secondary">Meet our artists</h2>
-            <p className="paragraph">
-              {artistmain.description}
-            </p>
-            <div className="artist__social">
-              <a href={artistmain.facebook} className="artist__icon">
-                <img src={facebook} alt="facebook icon" className="artist__icon--img" />
-              </a>
-              <a href={artistmain.instagram} className="artist__icon">
-                <img src={instagram} alt="instagram icon" className="artist__icon--img" />
-              </a>
-              <a href={artistmain.linkedin} className="artist__icon">
-                <img src={linkedin} alt="linkedin icon" className="artist__icon--img" />
-              </a>
-              <a href={artistmain.youtube} className="artist__icon">
-                <img src={youtube} alt="youtube icon" className="artist__icon--img" />
-              </a>
+              <h2 className="heading-secondary">Meet our artists</h2>
+              <p className="paragraph">
+                {artistmain.description}
+              </p>
+              <div className="artist__social">
+                <a href={artistmain.facebook} className="artist__icon">
+                  <img src={facebook} alt="facebook icon" className="artist__icon--img" />
+                </a>
+                <a href={artistmain.instagram} className="artist__icon">
+                  <img src={instagram} alt="instagram icon" className="artist__icon--img" />
+                </a>
+                <a href={artistmain.linkedin} className="artist__icon">
+                  <img src={linkedin} alt="linkedin icon" className="artist__icon--img" />
+                </a>
+                <a href={artistmain.youtube} className="artist__icon">
+                  <img src={youtube} alt="youtube icon" className="artist__icon--img" />
+                </a>
+              </div>
             </div>
             <div className="artist__select">
               
@@ -107,7 +108,7 @@ class Artist extends Component {
             })}             
               
             </div>
-          </div>
+          
           <div className="artist__picture">
             <h3 className="artist__picture--name">{`${artistmain.name}`}</h3>
             <img src={`${artistmain.image}`} alt="Artist " className="artist__picture--img" />

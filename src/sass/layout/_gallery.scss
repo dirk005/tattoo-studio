@@ -1,18 +1,33 @@
 .gallery{
     grid-column: full-start /full-end;
     padding: 0 1.5rem;
-     padding-top:10rem;
-  &__box{
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(7,  5vw);
-    grid-gap: 1.5rem;
-    @include supportsClipPath{
-        -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
-        clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+    padding-top:10rem;
+
+    &__box{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(7,  5vw);
+        grid-gap: 1.5rem;
+
+        @include supportsClipPath{
+            -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+            clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+        }
+
+        @include respond(meduim){
+            @include supportsClipPath{
+                -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+                clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            }
+        }
     }
-  }
-    // margin-top:-12rem;
+    
+    &__img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     
     &__item{
 
@@ -104,15 +119,6 @@
          &--21{
            grid-row: 7 /-1;
             grid-column:10 / -1;
-        }
-        
+        }        
     }
-
-    &__img{
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
 }

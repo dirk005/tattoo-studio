@@ -1,6 +1,6 @@
 .testimonial{
-      grid-column: full-start / full-end;
-      background-image: linear-gradient(to right bottom ,
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(to right bottom ,
         rgba($color-primary-light ,0.8),
         rgba($color-primary-dark ,0.8)),
         url(./img/testamonial-back.jpg);
@@ -19,8 +19,9 @@
     }
 
     @include respond(meduim){
-         grid-template-columns: 1fr;
-         padding:10rem 0;
+         
+         padding:10rem 10rem;
+         margin-bottom: 0;
 
         @include supportsClipPath{
             -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
