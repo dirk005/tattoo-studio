@@ -2,12 +2,13 @@
 /* MEDIA QUERY SIZES */
 // 1em  = 16px   eg. 600px / 16px = 37.5rem
 
-$bp-xsmall:37.5em;             //0-600px              :xsmall
-$bp-small : 56.25em;          // 600px - 900px            : small
+$bp-xxsmall:31.25em;         //0-500px                :xxsmall
+$bp-xsmall:37.5em;             //500px-600px        :xsmall
+$bp-small : 56.25em;          // 600px - 900px      : small
 $bp-meduim : 68.75em;     // 900px -1100px      : meduim
 $bp-large : 81.25em;          // 1100px -1300px    : large
-                                         // 1300px - 1800px : Normal styles
-$bp-xlarge : 112.5em;        // 1800px  +            : xlarge
+                                           // 1300px - 1800px   : Normal styles
+$bp-xlarge : 112.5em;        // 1800px  +              : xlarge
 
 /* COLORS */
 $color-primary:   #399898;

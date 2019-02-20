@@ -4,130 +4,131 @@
     grid-template-columns:repeat(2, 1fr) ;
     align-items: center;
     grid-gap:2rem;
-    padding-bottom: 0;
+    padding-bottom: 0;    
 
     @include respond(meduim){
-            grid-template-columns:1fr ;
+        grid-template-columns:1fr ;
+        grid-template-rows: max-content 60rem;    
+        overflow: hidden;        
     }
 
     &__text{
         grid-column: 1/2;
-        grid-row:1/2;
-    
+        grid-row:1/2;    
         padding:2rem 1rem;
         align-self:start;
         justify-self:start;    
         padding-bottom: 0;    
-       
+
+       @include respond(meduim){
+           width: 100%;
+           background-color: $color-white;
+       }
     }
 
     &__list{
         list-style: none;
-        margin: 3rem 0;
-                
+        margin: 3rem 0;                
         display: flex;
-       flex-direction: column;
-       justify-items: center;
-    
+        flex-direction: column;
+        justify-items: center;    
 
         &--item{
-            margin-bottom: 1rem;
-      
+            margin-bottom: 1rem;     
 
-                    &-1::before{
-                        content: "";
-                        display: inline-block;
-                        height: 2rem;
-                        width: 2rem;
-                        transform: translateY(.3rem);
-                         margin-right: .7rem;
+            &-1::before{
+                content: "";
+                display: inline-block;
+                height: 2rem;
+                width: 2rem;
+                transform: translateY(.3rem);
+                    margin-right: .7rem;
 
-                            //Older browsers
-                            background-image: url(./img/svg/location-pin.svg);
-                            background-size: cover;
+                    //Older browsers
+                    background-image: url(./img/svg/location-pin.svg);
+                    background-size: cover;
 
-                            //Newer brwosers - masks
-                            @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                                -webkit-mask-image:url(./img/svg/location-pin.svg);
-                                mask-image:url(./img/svg/location-pin.svg);    
-                                background-color: $color-primary;                   
-                                -webkit-mask-size: cover;
-                                mask-size: cover;
-                                background-image: none;                   
-                            }
-                        } 
+                    //Newer brwosers - masks
+                    @supports(-webkit-mask-image:url()) or(mask-image:url()){
+                        -webkit-mask-image:url(./img/svg/location-pin.svg);
+                        mask-image:url(./img/svg/location-pin.svg);    
+                        background-color: $color-primary;                   
+                        -webkit-mask-size: cover;
+                        mask-size: cover;
+                        background-image: none;                   
+                    }
+                } 
 
-                        &-2::before{
-                            content: "";
-                            display: inline-block;
-                            height: 2rem;
-                            width: 2rem;
-                            transform: translateY(.3rem);
-                            margin-right: .7rem;
+                &-2::before{
+                    content: "";
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+                    transform: translateY(.3rem);
+                    margin-right: .7rem;
 
-                                //Older browsers
-                                background-image: url(./img/svg/clock.svg);
-                                background-size: cover;
+                        //Older browsers
+                        background-image: url(./img/svg/clock.svg);
+                        background-size: cover;
 
-                                //Newer brwosers - masks
-                                @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                                    -webkit-mask-image:url(./img/svg/clock.svg);
-                                    mask-image:url(./img/svg/clock.svg);    
-                                    background-color: $color-primary;                   
-                                    -webkit-mask-size: cover;
-                                    mask-size: cover;
-                                    background-image: none;                   
-                                }
-                            }
+                        //Newer brwosers - masks
+                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
+                            -webkit-mask-image:url(./img/svg/clock.svg);
+                            mask-image:url(./img/svg/clock.svg);    
+                            background-color: $color-primary;                   
+                            -webkit-mask-size: cover;
+                            mask-size: cover;
+                            background-image: none;                   
+                        }
+                    }
 
-                        &-3::before{
-                            content: "";
-                            display: inline-block;
-                            height: 2rem;
-                            width: 2rem;
-                            transform: translateY(.3rem);
-                            margin-right: .7rem;
+                &-3::before{
+                    content: "";
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+                    transform: translateY(.3rem);
+                    margin-right: .7rem;
 
-                                //Older browsers
-                                background-image: url(./img/svg/old-phone.svg);
-                                background-size: cover;
+                        //Older browsers
+                        background-image: url(./img/svg/old-phone.svg);
+                        background-size: cover;
 
-                                //Newer brwosers - masks
-                                @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                                    -webkit-mask-image:url(./img/svg/old-phone.svg);
-                                    mask-image:url(./img/svg/old-phone.svg);    
-                                    background-color: $color-primary;                   
-                                    -webkit-mask-size: cover;
-                                    mask-size: cover;
-                                    background-image: none;                   
-                                }
-                            }
-                            
-                        &-4::before{
-                            content: "";
-                            display: inline-block;
-                            height: 2rem;
-                            width: 2rem;
-                            transform: translateY(.3rem);
-                            margin-right: .7rem;
+                        //Newer brwosers - masks
+                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
+                            -webkit-mask-image:url(./img/svg/old-phone.svg);
+                            mask-image:url(./img/svg/old-phone.svg);    
+                            background-color: $color-primary;                   
+                            -webkit-mask-size: cover;
+                            mask-size: cover;
+                            background-image: none;                   
+                        }
+                    }
+                    
+                &-4::before{
+                    content: "";
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+                    transform: translateY(.3rem);
+                    margin-right: .7rem;
 
-                                //Older browsers
-                                background-image: url(./img/svg/mail.svg);
-                                background-size: cover;
+                        //Older browsers
+                        background-image: url(./img/svg/mail.svg);
+                        background-size: cover;
 
-                                //Newer brwosers - masks
-                                @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                                    -webkit-mask-image:url(./img/svg/mail.svg);
-                                    mask-image:url(./img/svg/mail.svg);    
-                                    background-color: $color-primary;                   
-                                    -webkit-mask-size: cover;
-                                    mask-size: cover;
-                                    background-image: none;                   
-                                }
-                            }                           
-                    }          
-        
-    }
+                        //Newer brwosers - masks
+                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
+                            -webkit-mask-image:url(./img/svg/mail.svg);
+                            mask-image:url(./img/svg/mail.svg);    
+                            background-color: $color-primary;                   
+                            -webkit-mask-size: cover;
+                            mask-size: cover;
+                            background-image: none;                   
+                        }
+                    }                           
+            }  
+        }
 
      &__link{
         
@@ -153,6 +154,7 @@
         &--img{
             height: 3rem;
         }
+
         &:link,
         &:visited{           
             display: inline-block;
@@ -181,11 +183,14 @@
         padding: 1.5rem;
         position: relative;
         transition: all .5s;
-        padding-bottom: 0;
+       
         
         @include respond(meduim){
             grid-column:1/span 1;
-            grid-row:2/span 1;   
+            grid-row:2/span 1;  
+            padding: 0;           
+            overflow: hidden; 
+            z-index: -100;
         }
 
         &--img{      
@@ -201,16 +206,14 @@
                 clip-path: polygon(0 0 ,100% 0 ,100% 90%, 0 100%);
             }
 
-           @include respond(meduim){
-                transform: translateY(0); 
-                padding-bottom: 0; 
+           @include respond(meduim){              
+               transform: translateY(0); 
+               padding-bottom: 0;                
                 @include supportsClipPath{
                     -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
                     clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
                 }
-            }
-            
-        }
-     
+            }            
+        }     
     }
 }

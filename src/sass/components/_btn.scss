@@ -1,4 +1,5 @@
 .btn{
+
     &,
     &:link,
     &:visited{
@@ -32,7 +33,6 @@
         padding: 1.5rem 3rem;
     }
 
-
     &--animated{
         animation: moveInBottom 1s ease-out .75s;    
         animation-fill-mode: backwards;
@@ -50,7 +50,8 @@
         z-index: -1;
         transition:all .4s;
     }
-     &--small{
+
+    &--small{
         font-size:3.2rem;
         border:none;
         background:none;
@@ -97,6 +98,4 @@
         box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
         transform: translateY(0);
     }
-
-    
 }

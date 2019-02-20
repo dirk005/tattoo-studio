@@ -4,6 +4,7 @@
     display: grid;   
     grid-template-rows: min-content 1fr;
     grid-template-columns:repeat(2, 1fr) ;
+    justify-content: center;
     align-items: center;
     grid-gap:2rem;
     margin-bottom: -26rem;
@@ -23,6 +24,11 @@
         grid-template-columns:min-content ;
         grid-template-rows: min-content 1fr min-content;
     }
+     @include respond(xxsmall){   
+         padding: 5rem .5rem;
+          grid-template-columns: 100% 1fr ;           
+    }
+
 
     &__text{
         grid-column: 1/span 1;
@@ -98,7 +104,13 @@
         @include respond(xsmall){         
             grid-column: 1/span 1;    
             grid-row: 3/span 1;    
-             flex-direction:row;          
+            flex-direction:row;                  
+        }
+        
+        @include respond(xxsmall){  
+            justify-content:center;       
+            flex-wrap: wrap;  
+            flex-grow: 2;
         }
       
         &--shape{             
@@ -151,6 +163,7 @@
             grid-row: 2/span 1;   
             flex-direction: column;   
         }
+        
 
         &--img{      
             display: block;
@@ -188,8 +201,10 @@
             @include respond(small){
                 top:10rem;
             } 
+            @include respond(xxsmall){
+                top:2rem;
+                left:0;
+            }
         }        
-    }   
-
-    
+    }       
 }

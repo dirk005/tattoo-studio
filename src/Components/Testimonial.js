@@ -26,8 +26,10 @@ class Testimonial extends Component{
     }
 
     changeCounter = (type) =>{
+        //Get counter value
         let count =this.state.counter;
 
+        //add or subtract value
         if (type === 'plus'){
             if (count === 2) {
                 count = 0;
@@ -41,9 +43,26 @@ class Testimonial extends Component{
                 count--;
             }
         }
-        console.log(count)
-        this.setState({counter:count});
+
+        //Set up elemets to fade out and in
+        const testimonialBox = document.getElementById("testimonial-box");        
+
+        //Add fade out to elements
+        testimonialBox.classList.add('fadeOut');        
+
+        //Wait a 1 min to change artist and fade in 
+        setTimeout(() => {
+            this.setState({ counter: count });
+            testimonialBox.classList.add('fadeIn');            
+        }, 1000);
+
+        //Remove all classes after 2 sec
+        setTimeout(() => {
+            testimonialBox.classList.remove('fadeOut');
+            testimonialBox.classList.remove('fadeIn');            
+        }, 2000); 
     }
+
     render(){
         const {testimonials, counter} = this.state;
 
@@ -53,7 +72,7 @@ class Testimonial extends Component{
                         <div className='heading-box'>
                             <h2 className='heading-secondary'>Testimonials</h2>
                         </div>
-                        <div className="testimonial__box">
+                        <div id="testimonial-box" className="testimonial__box">
                             <div className="testimonial__description">
                             <p>{testimonials[counter].description}</p>
                             </div>
@@ -74,8 +93,7 @@ class Testimonial extends Component{
                         </div>
                     </section>
             </>
-            );
-        
+            );        
     }
 }
 

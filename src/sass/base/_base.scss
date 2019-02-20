@@ -13,6 +13,7 @@ html{
     scroll-behavior: smooth;
     
     @include respond(meduim){
-            font-size: 50% // 1rem = 8px smaller from 900px
+            font-size: 50% ; // 1rem = 8px smaller from 900px
+            scroll-behavior: auto; //remove smooth scrolling 
     }
 }

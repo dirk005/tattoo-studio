@@ -9,12 +9,11 @@
     padding: 15rem 20rem  25rem 20rem;
     z-index: 1;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
 
     @include supportsClipPath{
-        -webkit-clip-path: polygon(0 0 ,100% 25% ,100% 100%, 0 75%);
-        clip-path: polygon(0 0 ,100% 22% ,100% 100%, 0 78%);
+        -webkit-clip-path: polygon(0 0 ,100% 18% ,100% 100%, 0 78%);
+        clip-path: polygon(0 0 ,100% 18% ,100% 100%, 0 78%);        
     }
 
     @include respond(large){
@@ -31,6 +30,9 @@
         }
     }
 
+    @include respond(xxsmall){
+        padding:15rem 0;
+    }
 
     &__cards{
         display: grid;
@@ -38,7 +40,7 @@
         
         @include respond(small){
             grid-template-columns: 1fr;
-            grid-gap: 2.5rem;
+            grid-row-gap: 2.5rem;
             justify-items: center;
             align-items: center;
         }        

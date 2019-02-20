@@ -4,11 +4,9 @@
         opacity: 0;
         transform: translateX(-10rem)
     }
-
     80%{
         transform: translateX(1rem)
     }
-
     100%{
         opacity: 1;
         transform: translateX(0)
@@ -20,11 +18,9 @@
         opacity: 0;
         transform: translateX(10rem)
     }
-
     80%{
         transform: translateX(-1rem)
     }
-
     100%{
         opacity: 1;
         transform: translateX(0)
@@ -36,9 +32,45 @@
         opacity: 0;
         transform: translateY(5rem)
     }
-
     100%{
         opacity: 1;
         transform: translateY(0)
+    }
+}
+
+@keyframes animateFadeOut{
+    0%{
+        opacity: 1;        
+    }
+    25%{
+        opacity: .75;     
+    }
+    50%{
+        opacity: .5;     
+    }
+    75%{
+        opacity: .25;     
+    }
+    100%{
+        opacity: 0;      
+    }
+}
+
+@keyframes animateFadeIn{
+    0%{
+        opacity: 0;
+        
+    }
+    25%{
+        opacity: .25;     
+    }
+    50%{
+        opacity: .5;     
+    }
+    75%{
+        opacity: .75;     
+    }
+    100%{
+        opacity:1;      
     }
 }

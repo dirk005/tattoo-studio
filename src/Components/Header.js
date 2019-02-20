@@ -4,8 +4,7 @@ import React from 'react';
 const Header = () => {
     return (
       <>
-        <header id='home' className="header">          
-
+        <header id='home' className="header">    
           <div className="header__text-box">
             <h1 className="heading-primary">
               <span className="heading-primary--main">Tattoo</span>

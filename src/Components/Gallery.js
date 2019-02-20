@@ -69,18 +69,18 @@ class Gallery extends Component{
         return(
             <>
                 <section id='gallery' class="gallery">
-            <div className='gallery__box'>
-                {//Add all imges to page
-                    images.map((image,i) =>{
-                        return(
-                            <figure class={`gallery_item gallery__item--${i}`}>
-                                <img src={image} alt={`Gallery ${i}`} class="gallery__img" />
-                            </figure>
-                        );
-                    })
-                }
+                    <div className='gallery__box'>
+                        {//Add all imges to page
+                            images.map((image,i) =>{
+                                return(
+                                    <figure class={`gallery_item gallery__item--${i}`}>
+                                        <img src={image} alt={`Gallery ${i}`} class="gallery__img" />
+                                    </figure>
+                                );
+                            })
+                        }
                     </div>
-            </section>
+                </section>
             </>
         );
     }

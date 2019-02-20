@@ -10,7 +10,10 @@
 /* MEDIA QUERY MANAGER */
 
 @mixin respond($breakpoint){
-     @if $breakpoint == xsmall {
+    @if $breakpoint == xxsmall {
+        @media only screen and (max-width : $bp-xxsmall){ @content };   
+    }
+    @if $breakpoint == xsmall {
         @media only screen and (max-width : $bp-xsmall){ @content };   
     }
     @if $breakpoint == small {

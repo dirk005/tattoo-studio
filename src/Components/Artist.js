@@ -57,13 +57,36 @@ class Artist extends Component {
   }
 
   componentDidMount() {
+    //Set the main artist to display to the first artist in the array
     this.setState({artistmain:this.state.artists[0]});
   }
 
   changeArtist = (selected) =>{    
-    let newArtist = this.state.artists[selected];
-    this.setState({ artistmain: newArtist  });
-   
+      //Get selected artist
+      let newArtist = this.state.artists[selected];
+
+      //Set up elemets to fade out and in
+      const artistPic = document.getElementById("artist-picture");
+      const artistPar = document.getElementById("artist-paragraph");
+
+      //Add fade out to elements
+      artistPic.classList.add('fadeOut');
+      artistPar.classList.add('fadeOut');
+
+      //Wait a 1 min to change artist and fade in 
+      setTimeout(() => {       
+        this.setState({ artistmain: newArtist }); 
+        artistPic.classList.add('fadeIn');
+        artistPar.classList.add('fadeIn');
+      }, 1000);
+
+      //Remove all classes after 2 sec
+      setTimeout(() => {
+        artistPic.classList.remove('fadeOut');
+        artistPic.classList.remove('fadeIn');
+        artistPar.classList.remove('fadeOut');
+        artistPar.classList.remove('fadeIn');
+      }, 2000);    
   }
 
   render(){
@@ -75,7 +98,7 @@ class Artist extends Component {
         <section id="artists" className="artist">
           <div className="artist__text">
               <h2 className="heading-secondary">Meet our artists</h2>
-              <p className="paragraph">
+              <p id="artist-paragraph" className="paragraph">
                 {artistmain.description}
               </p>
               <div className="artist__social">
@@ -109,9 +132,9 @@ class Artist extends Component {
               
             </div>
           
-          <div className="artist__picture">
-            <h3 className="artist__picture--name">{`${artistmain.name}`}</h3>
-            <img src={`${artistmain.image}`} alt="Artist " className="artist__picture--img" />
+          <div id="artist-picture" className="artist__picture">
+            <h3  className="artist__picture--name">{`${artistmain.name}`}</h3>
+            <img  src={`${artistmain.image}`} alt="Artist " className="artist__picture--img" />
           </div>
         </section>
       </>
