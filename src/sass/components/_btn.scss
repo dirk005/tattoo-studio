@@ -1,5 +1,7 @@
+//Default button
 .btn{
 
+    //Set styles
     &,
     &:link,
     &:visited{
@@ -14,11 +16,13 @@
         cursor: pointer;
     }
 
+    //Move button up and add shadow
     &:hover{
         transform: translateY(-0.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black,0.3);
     }
 
+    //Push button down a bit when clicked or active
     &:active,
     &:focus{
         outline: none;
@@ -26,6 +30,7 @@
         box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
     }
 
+    //Styles for blue button
     &--blue{
         display: inline-block;
         background-color: rgba($color-primary,0.8);
@@ -33,47 +38,24 @@
         padding: 1.5rem 3rem;
     }
 
+    //Animated button 
     &--animated{
         animation: moveInBottom 1s ease-out .75s;    
         animation-fill-mode: backwards;
     }
 
-    &::after{
-        content: "";
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        border-radius: 5rem;
-        position: absolute;
-        top:0;
-        left:0;
-        z-index: -1;
-        transition:all .4s;
-    }
-
+    //Smaller button 
     &--small{
         font-size:3.2rem;
-        border:none;
-        background:none;
-        display: inline-block;  
+        background:none;        
         padding: 1rem 2rem;
         border-radius: 2rem;
         cursor: pointer;
         color:$color-grey-dark-1;
-
-        &:hover{
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba($color-black,0.3);
-        }
-    
-        &:active{
-            outline: none;
-            transform: translateY(-1px);
-            box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
-        }
     }
 }
 
+//Text button 
 .btn-text{
 
     &:link,
@@ -87,6 +69,7 @@
         transition: all .2s;
     }
 
+    //Move button up and add shadow
     &:hover{
         background-color: $color-primary;
         color: $color-white;
@@ -94,6 +77,7 @@
         transform: translateY(-.2rem);
     }
 
+    //Push button down a bit when clicked or active
     &:active{
         box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
         transform: translateY(0);

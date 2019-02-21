@@ -1,4 +1,6 @@
 /* Animations */
+
+//Move in form left side
 @keyframes moveInLeft{
     0%{
         opacity: 0;
@@ -13,6 +15,7 @@
     }
 }
 
+//Move in from right side
 @keyframes moveInRight{
     0%{
         opacity: 0;
@@ -27,6 +30,7 @@
     }
 }
 
+//Move in from bottom
 @keyframes moveInBottom{
     0%{
         opacity: 0;
@@ -38,6 +42,7 @@
     }
 }
 
+//Fade out 
 @keyframes animateFadeOut{
     0%{
         opacity: 1;        
@@ -56,6 +61,7 @@
     }
 }
 
+//Fade in 
 @keyframes animateFadeIn{
     0%{
         opacity: 0;

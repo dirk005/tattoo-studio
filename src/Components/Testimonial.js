@@ -25,7 +25,7 @@ class Testimonial extends Component{
         }
     }
 
-    changeCounter = (type) =>{
+    changeCounter = (type , id) =>{
         //Get counter value
         let count =this.state.counter;
 
@@ -45,10 +45,14 @@ class Testimonial extends Component{
         }
 
         //Set up elemets to fade out and in
-        const testimonialBox = document.getElementById("testimonial-box");        
+        const testimonialBox = document.getElementById("testimonial-box");   
+        const focusButton = document.getElementById(id);
 
         //Add fade out to elements
-        testimonialBox.classList.add('fadeOut');        
+        testimonialBox.classList.add('fadeOut');    
+        
+        //Remove focus form button
+        focusButton.blur();   
 
         //Wait a 1 min to change artist and fade in 
         setTimeout(() => {
@@ -59,7 +63,7 @@ class Testimonial extends Component{
         //Remove all classes after 2 sec
         setTimeout(() => {
             testimonialBox.classList.remove('fadeOut');
-            testimonialBox.classList.remove('fadeIn');            
+            testimonialBox.classList.remove('fadeIn');           
         }, 2000); 
     }
 
@@ -83,10 +87,10 @@ class Testimonial extends Component{
                                 <p>{testimonials[counter].date}</p>
                             </div>
                             <div className="testimonial_btns">
-                            <button className="btn--small btn--animated" onClick={() => this.changeCounter('min')}>
+                            <button id="button1" className="btn btn--small btn--animated" onClick={() => this.changeCounter('min','button1')}>
                                     &lsaquo;
                                 </button>    
-                            <button className=" btn--small btn--animated" onClick={() => this.changeCounter('plus')}>
+                        <button id="button2" className="btn btn--small btn--animated" onClick={() => this.changeCounter('plus', 'button2')}>
                                     &rsaquo;
                                 </button>
                             </div>

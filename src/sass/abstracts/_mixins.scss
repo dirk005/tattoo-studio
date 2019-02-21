@@ -1,4 +1,4 @@
-/* Position in center if parent */
+/* Position in absulte center  */
 
 @mixin absCenter {
     position: absolute;
@@ -32,12 +32,14 @@
 
 /* SUPPORTS MIXINS */
 
+//Support clip-path
 @mixin supportsClipPath{
      @supports ( -webkit-clip-path: polygon(0 0 )) or (clip-path: polygon(0 0)){
         @content;
     }
 }
 
+//Support background-clip
 @mixin supportsBackgroundClip{
      @supports (-webkit-background-clip: text) or (background-clip: text){
         @content;

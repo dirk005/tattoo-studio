@@ -7,12 +7,14 @@ body{
     color:$color-grey-dark-1;    
 }
 
+//Primary heading  
 .heading-primary{
     font-family: $font-Pacifoco;  
     color:$color-grey-light-1 ;
     text-transform: uppercase;
     backface-visibility: hidden; 
          
+    //Main heading
     &--main{
         display: block;
         font-size: 6rem;
@@ -26,6 +28,7 @@ body{
         }
     }
 
+    //Sub heading
     &--sub{
         display: block;
         font-size: 2rem;
@@ -35,21 +38,24 @@ body{
         margin-bottom: 6rem;
 
         @include respond(small){
-            letter-spacing: .5rem;
-            
+            letter-spacing: .5rem;            
         }
     }
 }
 
+//Secondary heading
 .heading-secondary{
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    color: $color-primary;
     letter-spacing: .2rem;
     transition: all .2s;
 
+    //Set color for older browsers
+    color: $color-primary;   
+
+    //Add linear gradient color for newer browsers
     @supports (-webkit-background-clip: text ) or (background-clip: text) {
         background-image: linear-gradient(to right , $color-primary-light, $color-primary-dark);
         -webkit-background-clip: text;
@@ -62,12 +68,14 @@ body{
     }
 }
 
+//Tertiary heading
 .heading-tertiary{
     font-size: $default-font-size;
     font-weight: 700;
     text-transform: uppercase;
 }
 
+//Heading box  gives background and display heading in center of page
 .heading-box{
     background-image:linear-gradient(to left,rgba($color-black,.8),rgba($color-grey-dark-2,.8));
     display: inline-block;
@@ -77,6 +85,7 @@ body{
     align-self: center;   /* Add display flex to parent */    
 }
 
+//Paragraph styles 
 .paragraph{
     font-size: $default-font-size;
     

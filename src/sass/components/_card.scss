@@ -1,16 +1,18 @@
-.card{
+/* Card with front and back that rotates and on media query only dislay one side */
+.card{    
+    -moz-perspective: 150rem; // add perspective bring card closer or turning won't work smoothly 
     perspective: 150rem;
-    -moz-perspective: 150rem;
     position: relative;
     height: 45rem;
     max-width: 30rem;
 
+    //Default styles for card
     &__side{
         height: 45rem;
         transition: all 1s ease;
         position:absolute;
         top:0;
-        left: 3vw;
+        left: 3vw;  // Looked best at 3vw 
         width: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
@@ -18,10 +20,12 @@
         overflow: hidden;
         box-shadow:  0 .5rem 1rem rgba($color-black,.8);
 
+        //Front side of card
         &--front{
             background-color: $color-white;
         }
 
+        //Back side of card rotate 180deg on start to be at back and add background colors
         &--back{
              transform: rotateY(180deg);
 
@@ -37,6 +41,7 @@
         }
     }
     
+    //Rotate front to back and back to front
     &:hover &__side--front{
         transform: rotateY(-180deg);
     }
@@ -44,7 +49,7 @@
         transform: rotateY(0);
     }
 
-    //FRONT SIDE STYLES
+    //Front side styles
     &__picture{
         background-size: cover;
         height: 23rem;               
@@ -57,6 +62,7 @@
             clip-path: polygon(0 0 ,100% 0 ,100% 75%, 0 100%);        
         }
 
+        //Add images to eatch card
         &--1{
             background-image:  linear-gradient(to right bottom, 
                 rgba($color-secondery-light,.8),
@@ -78,6 +84,7 @@
         }
     }
 
+    //Position heading and add styles
     &__heading{
         font-size: 2.8rem;
         font-weight: 300;
@@ -90,11 +97,13 @@
         width: 70%;        
     }
 
+    //Add to clone if added go over more than one line
     &__heading-span{
         padding: 1rem 1.5rem;
-        -webkit-boxdcoration-break:clone;
+        -webkit-box-dcoration-break:clone;
         box-decoration-break: clone;
 
+        //Add backgrounds to images
         &--1{
             background-image: linear-gradient(to right bottom ,
                 rgba($color-secondery-light,.85),
@@ -114,6 +123,7 @@
         }
     }
 
+    //Style of list on card
     &__details{
         padding: 3rem;
 
@@ -135,6 +145,8 @@
     }
 
     //BACK SIDE STYLES
+    
+    //Call to action button 
     &__cta{
         @include absCenter;
         
@@ -142,43 +154,50 @@
         text-align: center;
     }
 
+    //Default text styles
     &__price-box{        
         color: $color-white;
         margin-bottom: 8rem;        
     }
 
+    //From text  style
     &__price-from{
         font-size: 1.4rem;
         text-transform: uppercase;
     }
 
+    //Price value style
     &__price-value{
         font-size: 6rem;
         font-weight: 100;
 
+        //make sub smaller
         sub{
             font-size: .8rem;
         }
     }
 
+    //Change card to only one side not front and back (more back down )
     @include respond(small){
-        height: auto;
+        height: auto; // Change hight to fit content
         border-radius: .3rem;
-        background-color: $color-white;
+        background-color: $color-white; //Change liniar gradient to color white 
         box-shadow:  0 .5rem 1rem rgba($color-black,.8);
-        max-width: 100%;
+        max-width: 100%; // Change so card lookes better
         width: 60%;
 
+        //change side styles
         &__side{
-            height: auto;
-            left:0;
+            height: auto;            
+            left:0; //fix positioning
             position: relative;
             box-shadow: none;
             width: 100%;           
 
             &--back{
-                transform: rotateY(0);                
-               
+                transform: rotateY(0);     // Rotate card back to front      
+
+                //Clip image
                 @include supportsClipPath{
                     -webkit-clip-path: polygon(0 25% ,100% 0 , 100% 100% ,0 100%);
                     clip-path: polygon(0 25% ,100% 0 , 100% 100% ,0 100%);
@@ -186,13 +205,10 @@
             }
         }
         
+        //Remove rotate when hover
         &:hover &__side{
             transform: rotateY(0);       
-        }     
-
-        &__details{
-            padding: 0 3rem;
-        }
+        }    
 
         //BACK SIDE STYLES
         &__cta{
@@ -204,15 +220,18 @@
             padding: 7rem 4rem 4rem 4rem;
         }
 
+        //Change margin
         &__price-box{            
             margin-bottom: 3rem;            
         }
 
+        //change font size
         &__price-value{
             font-size: 4rem;
         }
     }
 
+    //Make smaller on small screens
     @include respond(xsmall){
         width: 80%;
     }
