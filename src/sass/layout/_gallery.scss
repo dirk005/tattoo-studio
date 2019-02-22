@@ -3,6 +3,7 @@
     grid-column: full-start /full-end;
     padding: 0 1.5rem;
     padding-top:10rem;
+    z-index: -10;
 
     //Add grid gallery
     &__box{
