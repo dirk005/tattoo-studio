@@ -1,3 +1,4 @@
+/* Footer section styles */
 .footer{
     grid-column: full-start / full-end;    
     background-image: linear-gradient(to right bottom ,
@@ -7,27 +8,27 @@
     box-shadow: 0 -.2rem .5rem rgba($color-black,.8);    
     margin-top: -10rem;
 
+    //Dispaly text as flex 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;    
     padding: 10rem 0 5rem 0;
 
     @include supportsClipPath{
-        -webkit-clip-path: polygon(0 80% ,100% 0 ,100% 100%, 0 100%);
-        clip-path: polygon(0 80% ,100% 0 ,100% 100%, 0 100%);
+       @include topClip;
     }
 
+    //remove margin, add change padding  and clear clip-path
     @include respond(meduim){
         margin-top: 0;
         padding: 5rem 0 5rem 0;
 
         @include supportsClipPath{
-            -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-            clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            @include clearClip;
         }
     }
    
+    //Footer link styles
      &__link{
         &:link,
         &:visited{

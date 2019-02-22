@@ -1,57 +1,58 @@
+/* Testimonial section styles */
 .testimonial{
-    grid-column: full-start / full-end;
-    background-image: linear-gradient(to right bottom ,
-        rgba($color-primary-light ,0.8),
-        rgba($color-primary-dark ,0.8)),
-        url(./img/testamonial-back.jpg);
-    background-size: cover;
+    grid-column: full-start / full-end;    
     padding:15rem;
     padding-bottom: 25rem;
     margin-bottom: -22rem;
+    
+    //display content with flex
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-     @include supportsClipPath{
-        -webkit-clip-path: polygon(0 22% ,100% 0 ,100% 78%, 0 100%);
-        clip-path: polygon(0 22% ,100% 0 ,100% 78%, 0 100%);
+    @include backImage(testamonial-back);
+    @include supportsClipPath{
+        @include sectionClipLeft;
     }
 
+    //Change margin, padding and clip-path
     @include respond(meduim){         
          padding:10rem 10rem;
          margin-bottom: 0;
 
         @include supportsClipPath{
-            -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-            clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            @include clearClip;
         }
     }
 
+    //Change padding
     @include respond(small){
         padding:5rem 5rem;
     }
+    //Change padding
     @include respond(xxsmall){
         padding:5rem 1.5rem;
     }
 
+    //Styles for testimonial box
     &__box{
         font-size: 1.6rem;    
         padding: 5rem 3rem;
         border-radius: 5rem .5rem;
         background-image: linear-gradient(
-            rgba($color-white ,0.5),
-            rgba($color-primary-dark ,0.5));
+            rgba($color-white ,0.8),
+            rgba($color-primary-dark ,0.8));
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    //Position paragraph
     &__description{
         text-align: center;
         margin: 2rem;
     }
 
+    //Change date font type
     &__date{
         font-family: $font-Pacifoco ;
     }

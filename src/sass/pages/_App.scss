@@ -1,12 +1,16 @@
+/* App section styles */
 .App {
     display:grid;
     grid-template-rows:  100vh  repeat(3 , max-content)  60rem   max-content min-content max-content  ;
     grid-template-columns:[full-start] minmax(6rem ,1fr)[center-start] repeat(8,[col-start] minmax(min-content, 14rem)[col-end])[center-end] minmax(6rem ,1fr) [full-end];
-     
+    
+    //Made columns smaller
    @include respond(small){       
         grid-template-columns: [full-start] minmax(2rem ,1fr)
             [center-start] repeat(8,[col-start] minmax(min-content, 14rem)[col-end])[center-end] minmax(2rem ,1fr) [full-end];
     }
+    
+    //Removed sides (Full start and end)
     @include respond(xsmall){       
         grid-template-columns: [full-start center-start] repeat(8,[col-start] minmax(min-content, 14rem)[col-end])[center-end full-end];
     }    

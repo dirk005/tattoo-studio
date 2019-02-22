@@ -1,74 +1,66 @@
+/* Feature section styles */
 .feature{
     grid-column: full-start / full-end;
     position :relative;
-    padding:10rem 5rem;
-    padding-top: 10rem;
-    margin-bottom:-12rem;
-    background-image: linear-gradient(to right bottom ,
-        rgba($color-primary-light ,0.5),
-        rgba($color-primary-dark ,0.5)),
-        url(./img/feature-back.jpg);
-    background-size: cover;
-    background-position: top;
+    padding:10rem 5rem;   
     z-index: 1;    
 
+    //Display as flex 
     display:flex;
-    flex-direction: column;
+    flex-direction: column;  
 
+    @include backImage(feature-back);
     @include supportsClipPath{
-        -webkit-clip-path: polygon(0 0 ,100% 15% ,100% 100%, 0 85%);
-        clip-path: polygon(0 0 ,100% 15% ,100% 100%, 0 85%);
+        @include sectionClipRight; 
     }
 
+    //Increase padding on xlarge screens
     @include respond(xlarge){
         padding: 10rem 20rem;
     }
 
+    //Remove padding from sides
     @include respond(large){
         padding: 10rem 0;
-
-        @include supportsClipPath{
-            -webkit-clip-path: polygon(0 0 ,100% 15% ,100% 100%, 0 85%);
-            clip-path: polygon(0 0 ,100% 25% ,100% 100%, 0 85%);
-        }
     }
 
+    //decreace padding top/bottom and remove clip-path
     @include respond(meduim){
-         grid-template-columns: 1fr;
          padding:5rem 0;
         
          @include supportsClipPath{
-            -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-            clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            @include clearClip;
         }        
     }
 
+    //Remove margin on very small screens
     @include respond(xxsmall){
         margin: 0;
     }
 
+    //Display boxes in a grid to auto fit on screen
     &__boxes{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
 
+        //On meduim screen only show 2 on row
         @include respond(meduim){
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            justify-content: center;          
+            grid-template-columns: 1fr 1fr;     
         }
 
+        //On xsmall screens make 1 column and add padding
         @include respond(xsmall){
             grid-template-columns:1fr;
-            align-items: center;
-            justify-content: center;
             padding:1rem 10rem;
         }
         
+        //change padding on xxsmall screen
         @include respond(xxsmall){
             padding:1rem 2rem;
         }
     }
 
+    //Box styles
     &-box{
         background-color: rgba($color-white,.6);
         font-size: 1.5rem;
@@ -76,30 +68,22 @@
         padding:2.5rem;
         text-align: center;
         border-radius: .5rem 5rem;
-        box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
-        transition: all .3s;        
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.15);             
 
-        @include respond(meduim){
-            padding: 2rem;
+        //change padding on smaller screens
+        @include respond(meduim){        
+            padding: 5rem 2.5rem;
         }
         
+        //Box Icon styles
         &__icon{        
             width: 8rem;
             margin-bottom: .5rem;
-            display: inline-block;     
-            
-            @include respond(meduim){
-                margin: 0;
-            }
         }
 
+        //Change position and scale when hovering box
         &:hover{
             transform: translateY(-1.5rem) scale(1.03);
         }    
-
-        @include respond(meduim){
-        
-            padding: 5rem 2.5rem;
-        }
     }
 }

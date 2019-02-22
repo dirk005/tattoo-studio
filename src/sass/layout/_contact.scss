@@ -1,135 +1,63 @@
+/* Contact section styles */
 .contact{    
     grid-column: center-start /center-end;
+
+    //add grid 
     display: grid;   
     grid-template-columns:repeat(2, 1fr) ;
-    align-items: center;
     grid-gap:2rem;
-    padding-bottom: 0;    
 
+    //Change grid to one column
     @include respond(meduim){
         grid-template-columns:1fr ;
         grid-template-rows: max-content 60rem;    
-        overflow: hidden;        
+        overflow: hidden;   //add to hide picture behinde text     
     }
 
+    //Contact text styles
     &__text{
         grid-column: 1/2;
         grid-row:1/2;    
         padding:2rem 1rem;
-        align-self:start;
-        justify-self:start;    
-        padding-bottom: 0;    
 
+        //Add backgound color to hide image
        @include respond(meduim){
            width: 100%;
            background-color: $color-white;
        }
     }
 
+    //Style for list items
     &__list{
         list-style: none;
         margin: 3rem 0;                
         display: flex;
-        flex-direction: column;
-        justify-items: center;    
+        flex-direction: column;  
 
+        //Add margin to items
         &--item{
             margin-bottom: 1rem;     
 
+            //add svgs to items
             &-1::before{
-                content: "";
-                display: inline-block;
-                height: 2rem;
-                width: 2rem;
-                transform: translateY(.3rem);
-                    margin-right: .7rem;
+                @include addSvg(location-pin);
+            } 
 
-                    //Older browsers
-                    background-image: url(./img/svg/location-pin.svg);
-                    background-size: cover;
+            &-2::before{
+                @include addSvg(clock);
+            }
 
-                    //Newer brwosers - masks
-                    @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                        -webkit-mask-image:url(./img/svg/location-pin.svg);
-                        mask-image:url(./img/svg/location-pin.svg);    
-                        background-color: $color-primary;                   
-                        -webkit-mask-size: cover;
-                        mask-size: cover;
-                        background-image: none;                   
-                    }
-                } 
+            &-3::before{
+                @include addSvg(old-phone);
+            }
+                
+            &-4::before{
+                @include addSvg(mail);                    
+            }                           
+        }  
+    }
 
-                &-2::before{
-                    content: "";
-                    display: inline-block;
-                    height: 2rem;
-                    width: 2rem;
-                    transform: translateY(.3rem);
-                    margin-right: .7rem;
-
-                        //Older browsers
-                        background-image: url(./img/svg/clock.svg);
-                        background-size: cover;
-
-                        //Newer brwosers - masks
-                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                            -webkit-mask-image:url(./img/svg/clock.svg);
-                            mask-image:url(./img/svg/clock.svg);    
-                            background-color: $color-primary;                   
-                            -webkit-mask-size: cover;
-                            mask-size: cover;
-                            background-image: none;                   
-                        }
-                    }
-
-                &-3::before{
-                    content: "";
-                    display: inline-block;
-                    height: 2rem;
-                    width: 2rem;
-                    transform: translateY(.3rem);
-                    margin-right: .7rem;
-
-                        //Older browsers
-                        background-image: url(./img/svg/old-phone.svg);
-                        background-size: cover;
-
-                        //Newer brwosers - masks
-                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                            -webkit-mask-image:url(./img/svg/old-phone.svg);
-                            mask-image:url(./img/svg/old-phone.svg);    
-                            background-color: $color-primary;                   
-                            -webkit-mask-size: cover;
-                            mask-size: cover;
-                            background-image: none;                   
-                        }
-                    }
-                    
-                &-4::before{
-                    content: "";
-                    display: inline-block;
-                    height: 2rem;
-                    width: 2rem;
-                    transform: translateY(.3rem);
-                    margin-right: .7rem;
-
-                        //Older browsers
-                        background-image: url(./img/svg/mail.svg);
-                        background-size: cover;
-
-                        //Newer brwosers - masks
-                        @supports(-webkit-mask-image:url()) or(mask-image:url()){
-                            -webkit-mask-image:url(./img/svg/mail.svg);
-                            mask-image:url(./img/svg/mail.svg);    
-                            background-color: $color-primary;                   
-                            -webkit-mask-size: cover;
-                            mask-size: cover;
-                            background-image: none;                   
-                        }
-                    }                           
-            }  
-        }
-
+    //Style item links
      &__link{
         
         &:link,
@@ -138,80 +66,44 @@
             color:$color-primary;
         }
 
+        //change color on hover
         &:hover{
             color:$color-grey-dark-2;
         }
     }
 
-     &__social{        
-        display:flex;
-        justify-content: start;
-        align-items: center;
-    }
+    //Include social icons
+    @include socialIcon(3rem);     
 
-    &__icon{
-        
-        &--img{
-            height: 3rem;
-        }
-
-        &:link,
-        &:visited{           
-            display: inline-block;
-            padding: 1rem 0;
-            text-decoration: none;
-            transition: all .2s;    
-
-            &:not(:first-child){
-                padding-left: 2rem;
-            }
-        }
-       
-        &:hover,
-        &:active{
-            background-position: 100%;
-            color: $color-primary;
-            transform: translateY(-.2rem);
-        }
-    }
-     
-
+    //Contact picture styles
     &__picture{
         grid-column: 2/-1;
         grid-row:1/2;        
-        width: 100%;        
-        padding: 1.5rem;
-        position: relative;
-        transition: all .5s;
-       
-        
+
+        //move to second row on medium screens
         @include respond(meduim){
             grid-column:1/span 1;
-            grid-row:2/span 1;  
-            padding: 0;           
-            overflow: hidden; 
+            grid-row:2/span 1;         
             z-index: -100;
         }
 
+        //Contact image styles
         &--img{      
             display: block;
             width: 100%;               
-            transition :all .3s;
             transform: translateY(-12rem);
             z-index: -100;  
-            padding-bottom: -32rem;
 
             @include supportsClipPath{
-                -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 90%, 0 100%);
-                clip-path: polygon(0 0 ,100% 0 ,100% 90%, 0 100%);
+               @include imageClipBottom;
             }
 
+            //remove translate and clip-path
            @include respond(meduim){              
                transform: translateY(0); 
-               padding-bottom: 0;                
+
                 @include supportsClipPath{
-                    -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-                    clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+                    @include clearClip;
                 }
             }            
         }     

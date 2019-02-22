@@ -1,43 +1,43 @@
+/* Services section styles */
 .services{
     grid-column: full-start / full-end;
-      background-image: linear-gradient(to right bottom ,
-        rgba($color-primary-light ,0.8),
-        rgba($color-primary-dark ,0.8)),
-        url(./img/services-back.jpg);
-    background-size: cover;
     margin-top:-12rem;
     padding: 15rem 20rem  25rem 20rem;
     z-index: 1;
     display: flex;
     flex-direction: column;    
 
+    @include backImage(services-back);
     @include supportsClipPath{
-        -webkit-clip-path: polygon(0 0 ,100% 18% ,100% 100%, 0 78%);
-        clip-path: polygon(0 0 ,100% 18% ,100% 100%, 0 78%);        
+        @include sectionClipRight;      
     }
 
+    //change padding on larg screens
     @include respond(large){
        padding: 15rem 5rem 25rem 5rem ;
     }
 
+    //change top margin ,padding and remove clip-path
     @include respond(meduim){
         margin-top:10rem;
         padding:  5rem ;
     
         @include supportsClipPath{
-            -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-            clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+            @include clearClip;
         }
     }
 
+    ///change padding 
     @include respond(xxsmall){
         padding:15rem 0;
     }
 
+    //display cards in grid
     &__cards{
         display: grid;
         grid-template-columns: repeat(3 , 1fr);
         
+        //Change grid to 1 column
         @include respond(small){
             grid-template-columns: 1fr;
             grid-row-gap: 2.5rem;

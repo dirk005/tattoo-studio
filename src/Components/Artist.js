@@ -73,12 +73,16 @@ class Artist extends Component {
       artistPic.classList.add('fadeOut');
       artistPar.classList.add('fadeOut');
 
-      //Wait a 1 min to change artist and fade in 
+      //Wait a 1 min to change artist 
       setTimeout(() => {       
         this.setState({ artistmain: newArtist }); 
+      }, 1000);
+
+      //Wait a 1.1 min to add fade in 
+      setTimeout(() => {
         artistPic.classList.add('fadeIn');
         artistPar.classList.add('fadeIn');
-      }, 1000);
+      }, 1100);
 
       //Remove all classes after 2 sec
       setTimeout(() => {

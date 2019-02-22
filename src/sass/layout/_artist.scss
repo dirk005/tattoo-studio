@@ -1,35 +1,45 @@
 .artist{    
     grid-column: center-start /center-end;
     padding-top:15rem;
+
+    //Add grid to artist sction 
     display: grid;   
     grid-template-rows: min-content 1fr;
     grid-template-columns:repeat(2, 1fr) ;
     justify-content: center;
     align-items: center;
     grid-gap:2rem;
+
+    //Change margins to move behind sections
+    margin-top:-12rem;
     margin-bottom: -26rem;
 
+    //Add padding to bottom and change margin 
     @include respond(meduim){
-          padding-bottom: 10rem;
+          padding-bottom: 13rem;
           margin-bottom: -20rem;         
     }
 
+    //Remove padding and margin and change columns
     @include respond(small){             
         padding-bottom: 0;
         margin-bottom: 0;
         grid-template-columns:1fr min-content ;
     }
     
+    //change to 1 column and 3 rows
     @include respond(xsmall){             
         grid-template-columns:min-content ;
         grid-template-rows: min-content 1fr min-content;
     }
-     @include respond(xxsmall){   
-         padding: 5rem .5rem;
-          grid-template-columns: 100% 1fr ;           
+
+    //change padding and column to 100%
+    @include respond(xxsmall){   
+        padding: 5rem .5rem;
+        grid-template-columns: 100% ;           
     }
 
-
+    //Artist text styles
     &__text{
         grid-column: 1/span 1;
         grid-row: 1/span 1;
@@ -37,104 +47,83 @@
         align-self:start;
         justify-self:start;
         
+        //Move text up 
         @include respond(large){
             margin-top: -10rem;       
          }
 
+         //Remove top margin
          @include respond(meduim){
             margin-top: 0;               
          }
 
+        //Add text to 2 columns
         @include respond(small){
-            grid-column: 1/span 2;
-            grid-row: 1/span 1;      
+            grid-column: 1/span 2; 
         }
 
+        //change back to 1 column
         @include respond(xsmall){             
             grid-column: 1/span 1;            
         }
     }
 
-    &__social{        
-        display:flex;
-        justify-content: start;
-        align-items: center;
-    }
+    //Include social icons
+    @include socialIcon(2rem);
 
-    &__icon{
-        
-        &--img{
-            height: 2rem;
-        }
-
-        &:link,
-        &:visited{           
-            display: inline-block;
-            padding: 1rem 0;
-            text-decoration: none;
-            transition: all .2s;    
-
-            &:not(:first-child){
-                padding-left: 2rem;
-            }
-        }
-       
-        &:hover,
-        &:active{
-            background-position: 100%;
-            color: $color-primary;
-            transform: translateY(-.2rem);
-        }
-    }
-
+    //Artist select styles
     &__select{
         align-self: start;
-        justify-self:center;
-        display:flex;
-        justify-content:flex-start;
-        align-items: center;          
+        display:flex;        
 
+        //Show on side of image on small screens
         @include respond(small){
             grid-column: 2/span 1;
             grid-row: 2/span 1;   
             flex-direction: column;   
-           align-self: center;
+            align-self: center;
         }
 
-        @include respond(xsmall){         
+        //Show on bottom of xsmall screens 
+        @include respond(xsmall){  
+             justify-content:center;        
             grid-column: 1/span 1;    
             grid-row: 3/span 1;    
             flex-direction:row;                  
         }
         
-        @include respond(xxsmall){  
-            justify-content:center;       
+        //wrap content on xxsmall screens
+        @include respond(xxsmall){                   
             flex-wrap: wrap;  
             flex-grow: 2;
         }
       
+        //Text on image styles
         &--shape{             
             position: relative;
             overflow: hidden;
             cursor: pointer;
             margin-right: 2rem;
-            
+            //Show text on hover
             &:hover .artist__select--caption{
                 opacity: 1;
                 transform: translate(-50%,-50%);
             }
 
+            //Blur image on hover
             &:hover .artist__select--img{
-                transform: scale(1);
                 filter: blur(.3rem) brightness(70%);
             }
         }
 
+        //Artist select images
         &--img{
             height: 15rem;
-            transition: all .5s;      
+            transition: filter .5s;      
+            backface-visibility: hidden;
         }
 
+        //Artist select names styles
         &--caption{
             position: absolute;
             top:50%;
@@ -145,11 +134,12 @@
             font-size: 1.7rem;
             text-align: center;
             opacity: 0;
-            transition: all .5s;
-            backface-visibility: hidden;
+            transition: all .5s;   
+            backface-visibility: hidden;        
         }        
     }
 
+    //Artist main picture styles
     &__picture{  
         grid-column: 2 /span 1;
         grid-row: 1 /span 2;           
@@ -158,33 +148,34 @@
         position: relative;
         transition: all .5s;
 
+        //Change position on small screens
         @include respond(small){
             grid-column: 1/span 1;
             grid-row: 2/span 1;   
             flex-direction: column;   
-        }
-        
+        }        
 
-        &--img{      
-            display: block;
+        //Artist image styles
+        &--img{                  
             width: 100%;
             transition :all .3s;
-            transform: translateY(-15rem);
+            transform: translateY(-10rem);
             z-index: -100;  
 
+            //changes for meduim screens
             @include respond(meduim){          
                 transform: translateY(-5rem);      
-                display: block;
-                width: 100%;
-                height: 100%;
+                display: block;                
                 object-fit: cover;     
             }
 
+            //change for small screens
             @include respond(small){
                 transform: translateY(0);
             }            
         }
 
+        //Style artist name to display on picture
         &--name{
             position: absolute;
             top:0;
@@ -198,9 +189,12 @@
             background-image:linear-gradient( rgba($color-primary-light,.8), rgba($color-primary-dark,.8));
             z-index: 1;
 
+            //More name down
             @include respond(small){
                 top:10rem;
             } 
+
+            //Move name up and remove spacing on left
             @include respond(xxsmall){
                 top:2rem;
                 left:0;

@@ -2,10 +2,7 @@ import React ,{Component} from 'react';
 import logo from '../img/logo-white.png';
 
 class Navigation extends Component {
-    constructor(){
-        super();
-    }
-
+ 
     // Hide navigation after item selected
     unCheckCheckBox = () => {
          document.getElementById("nav-toggle").checked = false;
@@ -15,11 +12,11 @@ class Navigation extends Component {
         return(
             <>
                 <div className='nav'>
-                    <input type="checkbox" class="nav__checkbox" id="nav-toggle"/>
-                    <label for="nav-toggle" class="nav__button">
-                        <span class="nav__icon">&nbsp;</span>
+                    <input type="checkbox" className="nav__checkbox" id="nav-toggle"/>
+                    <label for="nav-toggle" className="nav__button">
+                        <span className="nav__icon">&nbsp;</span>
                     </label>
-                    <div class="nav__background">
+                    <div className="nav__background">
                         &nbsp;
                     </div>
                     <div className="nav__logo-box">

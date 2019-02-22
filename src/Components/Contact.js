@@ -14,11 +14,11 @@ const Contact = () => {
                     <p className='paragraph'>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis totam fugiat rem consectetur adipisicing elit.
                     </p>
-                    <ul class="contact__list">
-                        <li class="contact__list--item contact__list--item-1">Joburg South Africa</li>
-                        <li class="contact__list--item contact__list--item-2">Monday to Saturday 9<sub>am</sub> - 8<sub>pm</sub></li>
-                        <li class="contact__list--item contact__list--item-3"><a href="tel:082000000" className="contact__link">082-000-0000</a></li>
-                        <li class="contact__list--item contact__list--item-4"><a href="mailto:lorem@tattoostudio.co.za" className="contact__link">lorem@tattoostudio.co.za</a></li>
+                    <ul className="contact__list">
+                        <li className="contact__list--item contact__list--item-1">Joburg South Africa</li>
+                        <li className="contact__list--item contact__list--item-2">Monday to Saturday 9<sub>am</sub> - 8<sub>pm</sub></li>
+                        <li className="contact__list--item contact__list--item-3"><a href="tel:082000000" className="contact__link">082-000-0000</a></li>
+                        <li className="contact__list--item contact__list--item-4"><a href="mailto:lorem@tattoostudio.co.za" className="contact__link">lorem@tattoostudio.co.za</a></li>
                     </ul>
                     <h3 className='heading-tertiary'>Follow us on social media</h3>
                     <div className="contact__social">

@@ -30,6 +30,49 @@
     }
 }
 
+/* CLIP-PATH MIXINS */
+
+//Bottom clip
+@mixin  bottomClip {
+    -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 80%, 0 100%);
+    clip-path: polygon(0 0 ,100% 0 ,100% 80%, 0 100%);
+}
+
+//Top Clip
+@mixin  topClip {
+   -webkit-clip-path: polygon(0 80% ,100% 0 ,100% 100%, 0 100%);
+        clip-path: polygon(0 80% ,100% 0 ,100% 100%, 0 100%);
+}
+
+//Section clip right
+@mixin sectionClipRight {
+    -webkit-clip-path: polygon(0 0 ,100% 20% ,100% 100%, 0 85%);
+    clip-path: polygon(0 0 ,100% 20% ,100% 100%, 0 85%);
+}
+
+//Section clip left
+@mixin sectionClipLeft {
+    -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 75%, 0 100%);
+    clip-path: polygon(0 25% ,100% 0 ,100% 75%, 0 100%);
+}
+
+//Clear clip
+@mixin clearClip {
+   -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+    clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+}
+
+//Gallery clip
+@mixin galleryClip {
+    -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+            clip-path: polygon(0 30% ,100% 0 ,100% 100%, 0 70%);
+}
+
+@mixin imageClipBottom {
+    -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 90%, 0 100%);
+    clip-path: polygon(0 0 ,100% 0 ,100% 90%, 0 100%);
+}
+
 /* SUPPORTS MIXINS */
 
 //Support clip-path
@@ -44,4 +87,88 @@
      @supports (-webkit-background-clip: text) or (background-clip: text){
         @content;
     }
+}
+
+
+/* Social buttons */
+@mixin socialIcon($size) {
+    //Display social icons as flex
+    &__social{        
+        display:flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    //social icons styles
+    &__icon{
+        
+        &--img{            
+            width: $size;
+            height: $size;
+            cursor: pointer;
+        }
+
+        //Link styles
+        &:link,
+        &:visited{      
+            align-self: center;     
+            padding: 1rem 0;
+            padding-right: 2rem;   
+            transition: all .2s;   
+        }
+       
+        @include roundHover;
+    }
+}
+
+/* Round circle bottom hover effect */
+@mixin roundHover {
+    &:hover,
+    &:active{
+        transform: translateY(-.2rem);
+
+        &:after {
+            content:"";            
+            position:absolute;
+            left:30%;
+            width:60%;
+            transform: translateX(-50%);
+            bottom: .1rem;                           
+            box-shadow: 0 0 .8rem .1rem rgba($color-black,.8 );
+        }
+    }
+}
+
+/* Add svg image to front of text */
+@mixin addSvg($url) {
+    content: "";
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    transform: translateY(.3rem);
+    margin-right: .7rem;
+
+    //Older browsers
+    background-image: url(./img/svg/#{$url}.svg);
+    background-size: cover;
+
+    //Newer brwosers - masks
+    @supports(-webkit-mask-image:url()) or(mask-image:url()){
+        -webkit-mask-image:url(./img/svg/#{$url}.svg);
+        mask-image:url(./img/svg/#{$url}.svg);    
+        background-color: $color-primary;                   
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-image: none;                   
+    }
+}
+
+/* Add background gradient with image */
+@mixin backImage($ImageUrl) {
+    background-image: linear-gradient(to right bottom ,
+        rgba($color-primary-light ,0.5),
+        rgba($color-primary-dark ,0.5)),
+        url(./img/#{$ImageUrl}.jpg);
+    background-size: cover;
+    background-position: top;
 }

@@ -23,7 +23,7 @@ const About = () => {
               repudiandae, ad cum! Fuga corporis debitis maiores laudantium
               dolorem modi distinctio dolores repudiandae voluptates odio!
             </p>
-            <a href="#features" class="btn-text">
+            <a href="#features" className="btn-text">
               Learn more &rarr;
             </a>
           </div>

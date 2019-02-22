@@ -1,8 +1,10 @@
+/* Gallery section styles */
 .gallery{
     grid-column: full-start /full-end;
     padding: 0 1.5rem;
     padding-top:10rem;
 
+    //Add grid gallery
     &__box{
         display: grid;
         grid-template-columns: repeat(10, 1fr);
@@ -10,21 +12,21 @@
         grid-gap: 1.5rem;
 
         @include supportsClipPath{
-            -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
-            clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+            @include galleryClip;
         }
 
         @include respond(meduim){
             @include supportsClipPath{
-                -webkit-clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
-                clip-path: polygon(0 0 ,100% 0 ,100% 100%, 0 100%);
+                @include clearClip;
             }
         }
+        //change grid gap on xxsmall screens
         @include respond(xxsmall){
              grid-gap: .5rem;
         }
     }
     
+    //Image fill grid
     &__img{
         display: block;
         width: 100%;
@@ -32,6 +34,7 @@
         object-fit: cover;
     }
     
+    //Position images
     &__item{
 
          &--0{
