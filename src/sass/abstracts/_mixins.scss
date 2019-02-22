@@ -65,7 +65,7 @@
 //Gallery clip
 @mixin galleryClip {
     -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
-            clip-path: polygon(0 30% ,100% 0 ,100% 100%, 0 70%);
+    clip-path: polygon(0 30% ,100% 0 ,100% 100%, 0 70%);
 }
 
 @mixin imageClipBottom {
@@ -88,7 +88,6 @@
         @content;
     }
 }
-
 
 /* Social buttons */
 @mixin socialIcon($size) {
