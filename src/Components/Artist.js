@@ -84,13 +84,13 @@ class Artist extends Component {
         artistPar.classList.add('fadeIn');
       }, 1100);
 
-      //Remove all classes after 2 sec
+      //Remove all classes after 2.1 sec
       setTimeout(() => {
         artistPic.classList.remove('fadeOut');
         artistPic.classList.remove('fadeIn');
         artistPar.classList.remove('fadeOut');
         artistPar.classList.remove('fadeIn');
-      }, 2000);    
+      }, 2100);    
   }
 
   render(){
