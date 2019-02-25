@@ -25,7 +25,7 @@
     }
 
     //decreace padding top/bottom and remove clip-path
-    @include respond(meduim){
+    @include respond(medium){
          padding:5rem 0;
         
          @include supportsClipPath{
@@ -43,8 +43,8 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
 
-        //On meduim screen only show 2 on row
-        @include respond(meduim){
+        //On medium screen only show 2 on row
+        @include respond(medium){
             grid-template-columns: 1fr 1fr;     
         }
 
@@ -71,7 +71,7 @@
         box-shadow: 0 1.5rem 4rem rgba($color-black,.15);             
 
         //change padding on smaller screens
-        @include respond(meduim){        
+        @include respond(medium){        
             padding: 5rem 2.5rem;
         }
         

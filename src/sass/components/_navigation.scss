@@ -29,8 +29,8 @@
         cursor: pointer;
         display: none; // Hide on bigger screens
         
-        @include respond(meduim){
-            display: block; // Start showing on meduim screens
+        @include respond(medium){
+            display: block; // Start showing on medium screens
         }
     }
 
@@ -85,7 +85,7 @@
         }
     }
 
-    @include respond(meduim){     
+    @include respond(medium){     
        
        //Hide background 
         max-height: 8rem;

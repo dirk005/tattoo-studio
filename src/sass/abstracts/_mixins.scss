@@ -19,8 +19,8 @@
     @if $breakpoint == small {
         @media only screen and (max-width : $bp-small){ @content };   
     }
-     @if $breakpoint == meduim {
-        @media only screen and (max-width : $bp-meduim){ @content };  
+     @if $breakpoint == medium {
+        @media only screen and (max-width : $bp-medium){ @content };  
     }
      @if $breakpoint == large {
         @media only screen and (max-width : $bp-large){ @content };    
@@ -64,7 +64,7 @@
 
 //Gallery clip
 @mixin galleryClip {
-    -webkit-clip-path: polygon(0 25% ,100% 0 ,100% 100%, 0 75%);
+    -webkit-clip-path: polygon(0 30% ,100% 0 ,100% 100%, 0 70%);
     clip-path: polygon(0 30% ,100% 0 ,100% 100%, 0 70%);
 }
 

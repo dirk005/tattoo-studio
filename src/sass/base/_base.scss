@@ -12,7 +12,7 @@ html{
     box-sizing: border-box;
     scroll-behavior: smooth;
     
-    @include respond(meduim){
+    @include respond(medium){
             font-size: 50% ; // 1rem = 8px smaller from 900px
             scroll-behavior: auto; //remove smooth scrolling 
     }

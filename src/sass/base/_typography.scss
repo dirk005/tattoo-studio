@@ -63,7 +63,7 @@ body{
         color: transparent;
     }
 
-    @include respond(meduim){
+    @include respond(medium){
         font-size: 3rem;
     }
 }

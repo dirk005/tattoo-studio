@@ -11,8 +11,8 @@
     align-items: center;
     grid-gap:2rem;
 
-    //Change to one column at meduim size
-    @include respond(meduim){
+    //Change to one column at medium size
+    @include respond(medium){
         grid-template-columns:1fr ;
     }
 
@@ -41,7 +41,7 @@
         padding: 1.5rem;
 
         //Change grid to fit on screen and add it to second line
-        @include respond(meduim){
+        @include respond(medium){
             grid-template-rows: repeat(8,mimmax(1fr  ,3rem));
             grid-template-columns: repeat(8,1fr);
             grid-column: 1/2;

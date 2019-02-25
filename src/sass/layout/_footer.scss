@@ -19,7 +19,7 @@
     }
 
     //remove margin, add change padding  and clear clip-path
-    @include respond(meduim){
+    @include respond(medium){
         margin-top: 0;
         padding: 5rem 0 5rem 0;
 
