@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tattoo-studio/precache-manifest.e1a70233f6caa2b6bb03053951cf9ecd.js"
+  "/tattoo-studio/precache-manifest.0615e38d1eee183aa05bf43566df53fb.js"
 );
 
 workbox.clientsClaim();
