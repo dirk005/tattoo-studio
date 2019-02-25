@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/tattoo-studio/static/media/gal-13.11274a80.jpg"
   },
   {
-    "revision": "c7bda70ce132c02feb60",
-    "url": "/tattoo-studio/static/css/main.8836a4f2.chunk.css"
+    "revision": "3bd9b5984de0cd5a0255",
+    "url": "/tattoo-studio/static/css/main.525cb2ce.chunk.css"
   },
   {
     "revision": "4ac1b77f66bcdc57932a",
@@ -112,8 +112,8 @@ self.__precacheManifest = [
     "url": "/tattoo-studio/static/media/gal-12.90fc075d.jpg"
   },
   {
-    "revision": "c7bda70ce132c02feb60",
-    "url": "/tattoo-studio/static/js/main.c7bda70c.chunk.js"
+    "revision": "3bd9b5984de0cd5a0255",
+    "url": "/tattoo-studio/static/js/main.3bd9b598.chunk.js"
   },
   {
     "revision": "6ed59277cc563a22f62e42302f5ef899",
@@ -180,12 +180,12 @@ self.__precacheManifest = [
     "url": "/tattoo-studio/static/media/services-piercing.ae4a7c81.jpg"
   },
   {
-    "revision": "0c3732f7163245dbb91ce8ce45034204",
-    "url": "/tattoo-studio/static/media/services-tattoo.0c3732f7.jpg"
-  },
-  {
     "revision": "62b75afe163eaca3a5479d5eca3d04b9",
     "url": "/tattoo-studio/static/media/services-design.62b75afe.jpg"
+  },
+  {
+    "revision": "0c3732f7163245dbb91ce8ce45034204",
+    "url": "/tattoo-studio/static/media/services-tattoo.0c3732f7.jpg"
   },
   {
     "revision": "31922c283e7a012661aab2b801b825c3",
@@ -196,14 +196,6 @@ self.__precacheManifest = [
     "url": "/tattoo-studio/static/media/feature-back.8d6f7474.jpg"
   },
   {
-    "revision": "1225fa756fdba4f63ece98dcaec574eb",
-    "url": "/tattoo-studio/static/media/services-back.1225fa75.jpg"
-  },
-  {
-    "revision": "4128dfd1a67638dca48c564ae4fb8557",
-    "url": "/tattoo-studio/static/media/testamonial-back.4128dfd1.jpg"
-  },
-  {
     "revision": "a68266a33ff4a9b2129e46d0184fa038",
     "url": "/tattoo-studio/static/media/location-pin.a68266a3.svg"
   },
@@ -212,15 +204,23 @@ self.__precacheManifest = [
     "url": "/tattoo-studio/static/media/clock.101df000.svg"
   },
   {
-    "revision": "209683d931b4dc5afad6818873e95fc9",
-    "url": "/tattoo-studio/static/media/mail.209683d9.svg"
+    "revision": "4128dfd1a67638dca48c564ae4fb8557",
+    "url": "/tattoo-studio/static/media/testamonial-back.4128dfd1.jpg"
   },
   {
     "revision": "5668347f330f79f0e4ab67317b9fcace",
     "url": "/tattoo-studio/static/media/old-phone.5668347f.svg"
   },
   {
-    "revision": "1c9d16e68a71a76b2b8dde09fed8b6f0",
+    "revision": "209683d931b4dc5afad6818873e95fc9",
+    "url": "/tattoo-studio/static/media/mail.209683d9.svg"
+  },
+  {
+    "revision": "1225fa756fdba4f63ece98dcaec574eb",
+    "url": "/tattoo-studio/static/media/services-back.1225fa75.jpg"
+  },
+  {
+    "revision": "89578fb723da9982cb1df4bfcd839356",
     "url": "/tattoo-studio/index.html"
   }
 ];
