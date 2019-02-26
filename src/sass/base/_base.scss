@@ -17,3 +17,9 @@ html{
             scroll-behavior: auto; //remove smooth scrolling 
     }
 }
+
+/*  Change slection colors */
+::selection{
+    background-color: $color-primary;
+    color:$color-white;
+}

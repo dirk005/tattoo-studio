@@ -87,7 +87,7 @@
 
         //Show on bottom of xsmall screens 
         @include respond(xsmall){  
-             justify-content:center;        
+            justify-content:center;        
             grid-column: 1/span 1;    
             grid-row: 3/span 1;    
             flex-direction:row;                  
@@ -105,6 +105,10 @@
             overflow: hidden;
             cursor: pointer;
             margin-right: 2rem;
+
+            @include respond(medium){
+                margin: 0 2rem;
+            }
             //Show text on hover
             &:hover .artist__select--caption{
                 opacity: 1;
@@ -145,7 +149,7 @@
         grid-column: 2 /span 1;
         grid-row: 1 /span 2;           
         width: 100%;        
-        padding: 1.5rem;
+       // padding: 1.5rem;
         position: relative;
         transition: all .5s;
 
@@ -179,27 +183,19 @@
         //Style artist name to display on picture
         &--name{
             position: absolute;
-            top:0;
-            left:-2rem;
+            top:-4rem;
+            left:1.5rem;
             padding:1rem 2rem;
             font-size: 1.8rem;            
             text-transform: uppercase;
-            color:$color-grey-dark-1;
-            border: 5px solid $color-primary;
-            border-radius: 1rem;
-            background-image:linear-gradient( rgba($color-primary-light,.8), rgba($color-primary-dark,.8));
+            color:$color-white;
+            background-image:linear-gradient( rgba($color-black,.8), rgba($color-primary-dark,.8));
             z-index: 1;
-
+    
             //More name down
-            @include respond(small){
-                top:10rem;
+            @include respond(medium){
+               top:1.5rem; 
             } 
-
-            //Move name up and remove spacing on left
-            @include respond(xxsmall){
-                top:2rem;
-                left:0;
-            }
         }        
     }       
 }

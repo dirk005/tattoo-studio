@@ -9,7 +9,7 @@
     padding:.5rem 2rem;
     z-index: 1000;   
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     //Hide checkbox
     &__checkbox{
@@ -56,7 +56,10 @@
 
     //Position logo
     &__logo-box{
-        padding:.5rem 3rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
 
@@ -88,27 +91,29 @@
     @include respond(medium){     
        
        //Hide background 
-        max-height: 8rem;
-    
+        height: 8rem;        
+        
         /* Hide navigation off screen to move in from side 
         *needs to be off screen nav will be on top and can be used if on screen */
-        &__navigation{            
+        &__navigation{    
+            margin: auto;
             transform: translateX(100rem);
             opacity: 0;
             transition: all .8s cubic-bezier(0.56, -0.38, 0.46, 1.6);  
-            z-index: 1200;          
+            z-index: 1200;                  
         }
 
         //Change list direction and center
        &__list{
             justify-content: center;
             align-items: center;           
-            flex-direction: column;         
+            flex-direction: column;    
         }
 
         //Add margin between items
         &__item{
             margin: 1rem;
+            font-size: 3rem;
         }
 
         //ICON
@@ -179,13 +184,15 @@
             transform: scale(10);  //Gives nice look on background
             height: 100vh;            
         }
+        &__checkbox:checked + &__list {
+            color: orangered;
+        }
 
         //Move in navigation onto page
         &__checkbox:checked ~ &__navigation{  
-            transform: translateX(0);          
+            transform: translate(10%,10%);          
             opacity: 1;
-        }
-      
-    }
+        } 
+    }    
 }
 

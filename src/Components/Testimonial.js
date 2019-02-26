@@ -74,7 +74,7 @@ class Testimonial extends Component{
             <>
                     <section id='testimonial' className="testimonial">
                         <div className='heading-box'>
-                            <h2 className='heading-secondary'>Testimonials</h2>
+                        <h2 className='heading-section'>Testimonials</h2>
                         </div>
                         <div id="testimonial-box" className="testimonial__box">
                             <div className="testimonial__description">

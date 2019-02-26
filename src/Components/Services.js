@@ -5,7 +5,7 @@ const Services = () => {
         <>
         <section id="services" className="services">
                 <div className='heading-box'>
-                    <h2 className='heading-secondary'>Services</h2>
+                    <h2 className='heading-section'>Services</h2>
                 </div>
                 <div className="services__cards">
                         <div className="card">
