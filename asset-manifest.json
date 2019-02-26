@@ -1,7 +1,7 @@
 {
-  "main.css": "/tattoo-studio/static/css/main.b778cd88.chunk.css",
-  "main.js": "/tattoo-studio/static/js/main.2250cb40.chunk.js",
-  "main.js.map": "/tattoo-studio/static/js/main.2250cb40.chunk.js.map",
+  "main.css": "/tattoo-studio/static/css/main.0c1aea09.chunk.css",
+  "main.js": "/tattoo-studio/static/js/main.165b9ac3.chunk.js",
+  "main.js.map": "/tattoo-studio/static/js/main.165b9ac3.chunk.js.map",
   "static/js/1.4ac1b77f.chunk.js": "/tattoo-studio/static/js/1.4ac1b77f.chunk.js",
   "static/js/1.4ac1b77f.chunk.js.map": "/tattoo-studio/static/js/1.4ac1b77f.chunk.js.map",
   "runtime~main.js": "/tattoo-studio/static/js/runtime~main.137923b2.js",
@@ -47,8 +47,8 @@
   "static/media/gal-27.jpg": "/tattoo-studio/static/media/gal-27.799480d5.jpg",
   "static/media/studio.png": "/tattoo-studio/static/media/studio.6cdb638a.png",
   "static/media/index.scss": "/tattoo-studio/static/media/old-phone.5668347f.svg",
-  "static/css/main.b778cd88.chunk.css.map": "/tattoo-studio/static/css/main.b778cd88.chunk.css.map",
+  "static/css/main.0c1aea09.chunk.css.map": "/tattoo-studio/static/css/main.0c1aea09.chunk.css.map",
   "index.html": "/tattoo-studio/index.html",
-  "precache-manifest.6e21a4c3bc4ebd6da201866da5330978.js": "/tattoo-studio/precache-manifest.6e21a4c3bc4ebd6da201866da5330978.js",
+  "precache-manifest.46cad5504fcb9a8c699b976677870dad.js": "/tattoo-studio/precache-manifest.46cad5504fcb9a8c699b976677870dad.js",
   "service-worker.js": "/tattoo-studio/service-worker.js"
 }
